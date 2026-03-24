@@ -1,0 +1,21 @@
+[package]
+name = "conversational-ai"
+version = "0.1.0"
+description = "A conversational AI application"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.5", features = [ "shell-open", "shell-sidecar", "fs-all"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+keyring = "2.0"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

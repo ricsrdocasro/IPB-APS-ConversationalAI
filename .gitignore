@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Rust / Cargo
+src-tauri/target/
+src-tauri/Cargo.lock
+# We usually keep Cargo.lock for applications, but if you want it purely source-based:
+# src-tauri/Cargo.lock
+
+# Python
+python-sidecar/venv/
+python-sidecar/.venv/
+python-sidecar/__pycache__/
+python-sidecar/build/
+python-sidecar/dist/
+python-sidecar/*.spec
+*.pyc
+*.pyo
+*.pyd
+
+# Tauri Sidecars & Binaries
+# We ignore the compiled binaries since they are generated per machine
+src-tauri/python-sidecar-*.exe
+src-tauri/binaries/
+
+# IDEs & System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Sensitive Info
+.env
+.env.*
+APS API Keys.txt

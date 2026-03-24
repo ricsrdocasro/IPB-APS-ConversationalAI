@@ -1,0 +1,80 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "Conversational AI",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "sidecar": true,
+        "open": true,
+        "scope": [
+          {
+            "name": "python-sidecar",
+            "sidecar": true,
+            "args": true
+          }
+        ]
+      },
+      "fs": {
+        "all": true,
+        "scope": ["$APPDATA/*", "$APPDATA/**"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "Utility",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [
+        "binaries/python-sidecar"
+      ],
+      "icon": [
+        "icons/icon.ico"
+      ],
+      "identifier": "com.conversational-ai.app",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 700,
+        "resizable": true,
+        "title": "Conversational AI",
+        "width": 900,
+        "center": true
+      }
+    ]
+  }
+}
