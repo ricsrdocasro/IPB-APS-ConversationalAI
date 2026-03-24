@@ -1,10 +1,12 @@
-# IPB Conversational AI
+﻿# IPB Conversational AI
+
+![Interface](Images/Interface.png)
 
 A high-performance, native Windows conversational AI application built with **Tauri**, **React**, and a **Python Sidecar** pipeline. This project integrates cutting-edge AI services to provide a low-latency, voice-to-voice interaction experience.
 
-![Architecture](Architecture.png)
+![Architecture](Images/Architecture.png)
 
-## 🚀 Features
+## ðŸš€ Features
 
 - **Real-time STT:** Powered by Deepgram Nova-2 with automatic language detection.
 - **Advanced LLM:** Integrated with DeepSeek-V3 for intelligent, context-aware responses.
@@ -14,14 +16,14 @@ A high-performance, native Windows conversational AI application built with **Ta
 - **Session Management:** Support for multiple chat sessions with persistent history.
 - **Safety Guardrails:** 30-second maximum recording timer with automatic AI acknowledgement.
 
-## 🛠️ Architecture
+## ðŸ› ï¸ Architecture
 
 The application uses a hybrid architecture:
 1. **Frontend (React + Vite):** Handles the UI, microphone capture (Web Audio API), and sequential audio playback.
 2. **Backend (Tauri/Rust):** Manages native windowing, secure API key storage, and sidecar process orchestration.
 3. **Sidecar (Python):** A high-performance bridge that manages concurrent streams to Deepgram, DeepSeek, and ElevenLabs.
 
-## 📦 Installation & Setup
+## ðŸ“¦ Installation & Setup
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18+)
@@ -55,7 +57,7 @@ The application uses a hybrid architecture:
    npm run tauri dev
    ```
 
-## 🏗️ Building the Executable
+## ðŸ—ï¸ Building the Executable
 
 To create a standalone Windows executable:
 
@@ -73,9 +75,10 @@ To create a standalone Windows executable:
    npm run tauri build
    ```
 
-## 📄 License
+## ðŸ“„ License
 
-This project was developed as part of the **Processamento de Sinal** course at the **Instituto Politécnico de Bragança (IPB)**.
+This project was developed as part of the **Processamento de Sinal** course at the **Instituto PolitÃ©cnico de BraganÃ§a (IPB)**.
 
 ---
 Developed by [Ricardo Castro](https://github.com/ricsrdocasro)
+

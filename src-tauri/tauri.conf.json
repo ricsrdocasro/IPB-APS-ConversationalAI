@@ -30,17 +30,18 @@
       }
     },
     "bundle": {
-      "active": true,
+      "active": false,
       "category": "Utility",
       "copyright": "",
       "deb": {
         "depends": []
       },
-      "externalBin": [
-        "binaries/python-sidecar"
-      ],
+      "externalBin": [],
       "icon": [
         "icons/icon.ico"
+      ],
+      "externalBin": [
+        "binaries/python-sidecar"
       ],
       "identifier": "com.conversational-ai.app",
       "longDescription": "",

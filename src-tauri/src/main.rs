@@ -4,8 +4,6 @@
 )]
 
 use serde::{Deserialize, Serialize};
-use tauri::api::process::Command;
-use tauri::api::process::CommandEvent;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct ApiKeys {
@@ -50,25 +48,25 @@ fn get_api_keys() -> Result<ApiKeys, String> {
 
 fn main() {
     tauri::Builder::default()
-        .setup(|_app| {
-            // Use Tauri's built-in Sidecar API
-            // This will look for 'python-sidecar-<triple>.exe' in development
-            // and bundle it as an internal resource in production.
-            let (mut rx, _child) = Command::new_sidecar("python-sidecar")
-                .expect("Failed to create sidecar command")
-                .spawn()
-                .expect("Failed to spawn sidecar");
-
+        .setup(|app| {
+            let handle = app.handle();
+            
+            // Spawn the sidecar
             tauri::async_runtime::spawn(async move {
+                // In production, Tauri bundles the sidecar. In dev, we can still use this API
+                // as long as the binary exists in src-tauri/binaries/
+                let (mut rx, _child) = tauri::api::process::Command::new_sidecar("python-sidecar")
+                    .expect("failed to setup sidecar")
+                    .spawn()
+                    .expect("failed to spawn sidecar");
+
                 while let Some(event) = rx.recv().await {
-                    if let CommandEvent::Stdout(line) = event {
+                    if let tauri::api::process::CommandEvent::Stdout(line) = event {
                         println!("Sidecar: {}", line);
-                    } else if let CommandEvent::Stderr(line) = event {
-                        eprintln!("Sidecar Error: {}", line);
                     }
                 }
             });
-
+            
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![save_api_keys, get_api_keys])
