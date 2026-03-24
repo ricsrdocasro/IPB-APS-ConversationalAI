@@ -1,4 +1,4 @@
-﻿# IPB Conversational AI
+# IPB Conversational AI
 
 ![Interface](Images/Interface.png)
 
@@ -6,7 +6,7 @@ A high-performance, native Windows conversational AI application built with **Ta
 
 ![Architecture](Images/Architecture.png)
 
-## ðŸš€ Features
+## 🚀 Features
 
 - **Real-time STT:** Powered by Deepgram Nova-2 with automatic language detection.
 - **Advanced LLM:** Integrated with DeepSeek-V3 for intelligent, context-aware responses.
@@ -16,14 +16,14 @@ A high-performance, native Windows conversational AI application built with **Ta
 - **Session Management:** Support for multiple chat sessions with persistent history.
 - **Safety Guardrails:** 30-second maximum recording timer with automatic AI acknowledgement.
 
-## ðŸ› ï¸ Architecture
+## 🛠️ Architecture
 
 The application uses a hybrid architecture:
 1. **Frontend (React + Vite):** Handles the UI, microphone capture (Web Audio API), and sequential audio playback.
 2. **Backend (Tauri/Rust):** Manages native windowing, secure API key storage, and sidecar process orchestration.
 3. **Sidecar (Python):** A high-performance bridge that manages concurrent streams to Deepgram, DeepSeek, and ElevenLabs.
 
-## ðŸ“¦ Installation & Setup
+## 📦 Installation & Setup
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18+)
@@ -57,7 +57,7 @@ The application uses a hybrid architecture:
    npm run tauri dev
    ```
 
-## ðŸ—ï¸ Building the Executable
+## 🏗️ Building the Executable
 
 To create a standalone Windows executable:
 
@@ -75,10 +75,9 @@ To create a standalone Windows executable:
    npm run tauri build
    ```
 
-## ðŸ“„ License
+## 📄 License
 
-This project was developed as part of the **Processamento de Sinal** course at the **Instituto PolitÃ©cnico de BraganÃ§a (IPB)**.
+This project was developed as part of the **Processamento de Sinal** course at the **Instituto Politécnico de Bragança (IPB)**.
 
 ---
-Developed by [Ricardo Castro](https://github.com/ricsrdocasro)
-
+Developed by [Ricardo Castro](https://github.com/ricsrdocasro) and Neyma Borges
